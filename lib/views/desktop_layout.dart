@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:responsive_dash_board/utils/app_styles.dart';
-
 import '../widgets/custom_drawer.dart';
 
 class DeskTopLayout extends StatelessWidget {
@@ -11,11 +9,12 @@ class DeskTopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: CustomDrawer()),
+        const Expanded(child: CustomDrawer()),
         Expanded(
+            flex: 2,
             child: Container(
-          color: Colors.green,
-        )),
+              color: Colors.green,
+            )),
         Expanded(
             child: Container(
           color: Colors.blue,

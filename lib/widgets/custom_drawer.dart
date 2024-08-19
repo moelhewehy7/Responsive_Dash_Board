@@ -1,16 +1,36 @@
 import 'package:flutter/material.dart';
-
+import 'package:responsive_dash_board/models/drawer_model.dart';
+import 'package:responsive_dash_board/utils/app_images.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
+import 'package:responsive_dash_board/widgets/drawer_item.dart';
 
-class CustomDrawer extends StatelessWidget {
+import 'notselected_and_selected_draweritem.dart';
+
+class CustomDrawer extends StatefulWidget {
   const CustomDrawer({
     super.key,
   });
 
   @override
+  State<CustomDrawer> createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  final List<DrawerModel> items = const [
+    DrawerModel(image: Assets.imagesOverview, title: 'Overview'),
+    DrawerModel(image: Assets.imagesOpportunites, title: 'Opportunities'),
+    DrawerModel(image: Assets.imagesMyCompetitors, title: 'My competitors'),
+    DrawerModel(image: Assets.imagesBriefs, title: 'Briefs'),
+    DrawerModel(image: Assets.imagesSaved, title: 'Saved'),
+  ];
+  int selectedIndex = 0;
+  @override
   Widget build(BuildContext context) {
-    print(DefaultTextStyle.of(context).style.fontFamily);
+    debugPrint(DefaultTextStyle.of(context)
+        .style
+        .fontFamily); //to get the current font family
     return Drawer(
+        backgroundColor: const Color(0xFFf6f6fb),
         elevation: 0,
         child: CustomScrollView(slivers: [
           const SliverToBoxAdapter(
@@ -41,7 +61,7 @@ class CustomDrawer extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: Icon(Icons.search, color: Colors.white),
+                    child: const Icon(Icons.search, color: Colors.white),
                   ),
                   title: Text(
                     'Concured',
@@ -51,23 +71,43 @@ class CustomDrawer extends StatelessWidget {
               child: SizedBox(
             height: 38,
           )),
-          SliverFillRemaining(
+          SliverList.builder(
+            itemBuilder: (context, index) => GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: () {
+                if (selectedIndex != index) {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                }
+              },
+              child: DrawerItem(
+                drawerModel: items[index],
+                isSelected: selectedIndex == index,
+              ),
+            ),
+            itemCount: items.length,
+          ),
+          const SliverFillRemaining(
+            hasScrollBody: false, // to solve overflow issue
             child: Column(
               children: [
-                ListTile(
-                  leading: Icon(Icons.house_outlined),
-                  title: Text(
-                    'Overview',
-                    style: TextStyle(
-                      color: Color(0xFF2B2F42),
-                      fontSize: 14,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
-                      letterSpacing: -0.07,
-                    ),
-                  ),
-                )
+                Spacer(
+                  flex: 2,
+                ),
+                NotSelectedDrawerItem(
+                  drawerModel: DrawerModel(
+                      image: Assets.imagesSettings, title: "Settings"),
+                ),
+                NotSelectedDrawerItem(
+                    drawerModel:
+                        DrawerModel(image: Assets.imagesHelp, title: "Help")),
+                NotSelectedDrawerItem(
+                    drawerModel: DrawerModel(
+                        image: Assets.imagesLogout, title: "Log out")),
+                Spacer(
+                  flex: 1,
+                ),
               ],
             ),
           )
