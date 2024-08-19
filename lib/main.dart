@@ -12,7 +12,10 @@ class ResponsiveDashBoard extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Roboto', // Set the default font family
+      ),
       debugShowCheckedModeBanner: false,
       home: HomeLayout(),
     );
