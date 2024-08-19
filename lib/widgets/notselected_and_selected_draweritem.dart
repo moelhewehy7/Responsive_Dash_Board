@@ -55,8 +55,8 @@ class SelectedDrawerItem extends StatelessWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color(0xFFf4f4fb),
-            Color.fromARGB(255, 239, 239, 252), // End color
+            Color(0xFFf4f4fb), Color(0xFFf3f3fb),
+            Color(0xFFf2f2fb), // End color
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,

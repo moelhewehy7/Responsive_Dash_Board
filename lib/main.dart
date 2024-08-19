@@ -17,7 +17,7 @@ class ResponsiveDashBoard extends StatelessWidget {
         fontFamily: 'Roboto', // Set the default font family
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeLayout(),
+      home: const HomeLayout(),
     );
   }
 }
