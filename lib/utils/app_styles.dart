@@ -7,10 +7,10 @@ abstract class AppStyles {
     fontWeight: FontWeight.w400,
   );
   static TextStyle styleRegular14 = const TextStyle(
-    color: Colors.black,
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-  );
+      color: Colors.black,
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 0.07);
   static TextStyle styleRegular20 = const TextStyle(
     color: Colors.black,
     fontSize: 20,

@@ -78,12 +78,15 @@ flutter:
     - family: Alatsi
       fonts:
         - asset: assets/fonts/Alatsi-Regular.ttf
-        
+
     - family: Neuton
       fonts:
         - asset: assets/fonts/Neuton-Bold.ttf
           weight: 700
-  #
+          
+    - family: Roboto
+      fonts:
+        - asset: assets/font/Roboto-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_assets:

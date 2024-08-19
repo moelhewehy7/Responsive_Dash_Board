@@ -30,6 +30,7 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(DefaultTextStyle.of(context).style.fontFamily);
     return Drawer(
         elevation: 0,
         child: CustomScrollView(slivers: [
@@ -66,7 +67,31 @@ class CustomDrawer extends StatelessWidget {
                   title: Text(
                     'Concured',
                     style: AppStyles.styleMedium20,
-                  )))
+                  ))),
+          const SliverToBoxAdapter(
+              child: SizedBox(
+            height: 38,
+          )),
+          SliverFillRemaining(
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.house_outlined),
+                  title: Text(
+                    'Overview',
+                    style: TextStyle(
+                      color: Color(0xFF2B2F42),
+                      fontSize: 14,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                      letterSpacing: -0.07,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
         ]));
   }
 }
