@@ -25,6 +25,7 @@ abstract class AppStyles {
   );
   static TextStyle styleMedium10 = const TextStyle(
     color: Colors.black,
+    fontFamily: "Roboto",
     fontSize: 10,
     fontWeight: FontWeight.w500,
     height: 0,

@@ -107,6 +107,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     drawerModel:
                         DrawerModel(image: Assets.imagesHelp, title: "Help")),
                 NotSelectedDrawerItem(
+                    color: Color(0xFF928484),
                     drawerModel: DrawerModel(
                         image: Assets.imagesLogout, title: "Log out")),
                 Spacer(

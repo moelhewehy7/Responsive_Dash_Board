@@ -7,8 +7,10 @@ class NotSelectedDrawerItem extends StatelessWidget {
   const NotSelectedDrawerItem({
     super.key,
     required this.drawerModel,
+    this.color,
   });
   final DrawerModel drawerModel;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class NotSelectedDrawerItem extends StatelessWidget {
             child: SvgPicture.asset(
               drawerModel.image,
               colorFilter:
-                  const ColorFilter.mode(Color(0xFF000000), BlendMode.srcIn),
+                  ColorFilter.mode(color ?? Color(0xFF000000), BlendMode.srcIn),
             ),
           ),
           const SizedBox(
@@ -30,7 +32,7 @@ class NotSelectedDrawerItem extends StatelessWidget {
             child: Text(
               drawerModel.title,
               style: AppStyles.styleRegular14.copyWith(
-                color: const Color(0xFF000000),
+                color: color ?? const Color(0xFF000000),
               ),
             ),
           ),

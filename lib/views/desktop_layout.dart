@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_dash_board/utils/app_images.dart';
+
 import 'package:responsive_dash_board/utils/app_styles.dart';
+import 'package:responsive_dash_board/widgets/custom_container.dart';
+import 'package:responsive_dash_board/widgets/dashboard_header.dart';
+
+import 'package:responsive_dash_board/widgets/project_header.dart';
 
 import '../widgets/custom_drawer.dart';
+import '../widgets/custom_linechart.dart';
 
 class DeskTopLayout extends StatelessWidget {
   const DeskTopLayout({super.key});
@@ -15,81 +19,119 @@ class DeskTopLayout extends StatelessWidget {
     return Row(
       children: [
         const Expanded(child: CustomDrawer()),
-        Expanded(flex: 2, child: DashboardHeader()),
+        const SizedBox(
+          width: 50,
+        ),
         Expanded(
-            child: Container(
-          color: Colors.blue,
-        ))
-      ],
-    );
-  }
-}
-
-class DashboardHeader extends StatelessWidget {
-  const DashboardHeader({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: ListTileHeader(
-              leading: Container(
-                width: 52,
-                height: 50.03,
-                decoration: ShapeDecoration(
-                  color: const Color(0xFFF6F6FB),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12)),
+            flex: 2,
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const DashboardHeader(),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                      const PorojectStatisticHeader(),
+                      const SizedBox(
+                        height: 35,
+                      ),
+                      CustomContainer(
+                        padding: const EdgeInsets.all(50),
+                        borderRadius: 40,
+                        widget: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Total visits",
+                                  style: AppStyles.styleRegular20,
+                                  textAlign: TextAlign.left,
+                                ),
+                                Text(
+                                  "42,43M",
+                                  style: AppStyles.styleMedium32
+                                      .copyWith(color: const Color(0xff7166f9)),
+                                  textAlign: TextAlign.left,
+                                ),
+                              ],
+                            ),
+                            const Divider(
+                              color: Color(0xffC4C4C4),
+                              height: 40,
+                            ),
+                            const CustomLineChart(),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      CustomContainer(
+                        padding: const EdgeInsets.only(
+                            left: 33, right: 33, top: 30, bottom: 24),
+                        borderRadius: 32,
+                        widget: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Traffic Sources",
+                                style: AppStyles.styleRegular20
+                                    .copyWith(color: const Color(0xff000000))),
+                            const Divider(
+                              color: Color(0xffC4C4C4),
+                              height: 40,
+                            ),
+                            const CustomContainer(
+                              color: Color(0xFFEFEFF8),
+                              borderRadius: 12,
+                              padding: EdgeInsets.only(
+                                  left: 45, right: 55, top: 5, bottom: 5),
+                              widget: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "sourse",
+                                    style: TextStyle(
+                                      fontFamily: "Roboto",
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xffa9a9a9),
+                                      height: 32 / 12,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                  Text(
+                                    "Traffic sourse,%",
+                                    style: TextStyle(
+                                      fontFamily: "Roboto",
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xffb2b2b3),
+                                      height: 32 / 12,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                child: Center(child: SvgPicture.asset(Assets.imagesBoroTeam)),
-              ),
-              title: 'Boro team'),
-        ),
-        SvgPicture.asset(Assets.imagesBoroteamadd),
-        Spacer(),
-        Expanded(
-          child: ListTileHeader(
-              leading: Image.asset(
-                Assets.imagesProfilePic,
-                height: 50,
-              ),
-              title: 'Zahra hasht..'),
-        ),
+              ],
+            )),
+        const SizedBox(
+          width: 50,
+        )
       ],
-    );
-  }
-}
-
-class ListTileHeader extends StatelessWidget {
-  const ListTileHeader({
-    super.key,
-    required this.leading,
-    required this.title,
-  });
-
-  final Widget leading;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: leading,
-      title: Text(
-        title,
-        style: AppStyles.styleMedium20,
-      ),
-      trailing: Container(
-        width: 30,
-        height: 30,
-        decoration: ShapeDecoration(
-          color: const Color(0xFFF6F6FB),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        ),
-        child: const Icon(Icons.arrow_drop_down),
-      ),
     );
   }
 }
