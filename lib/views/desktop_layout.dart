@@ -1,163 +1,140 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'package:responsive_dash_board/widgets/circular_percentage_indicator.dart';
-import 'package:responsive_dash_board/widgets/custom_container.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:responsive_dash_board/widgets/dashboard_header.dart';
-
+import 'package:responsive_dash_board/widgets/poroject_stats_first_section.dart';
 import 'package:responsive_dash_board/widgets/project_header.dart';
-import 'package:responsive_dash_board/widgets/traffic_sources_ListTile.dart';
-
-import '../utils/app_styles.dart';
 import '../widgets/custom_drawer.dart';
-import '../widgets/custom_linechart.dart';
+import '../widgets/traffic_source_widget.dart';
 
 class DeskTopLayout extends StatelessWidget {
   const DeskTopLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        const Expanded(child: CustomDrawer()),
-        const SizedBox(
+        Expanded(child: CustomDrawer()),
+        SizedBox(
           width: 50,
         ),
         Expanded(
-            flex: 2,
+            flex: 3,
             child: CustomScrollView(
               slivers: [
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         height: 20,
                       ),
-                      const DashboardHeader(),
-                      const SizedBox(
+                      DashboardHeader(),
+                      SizedBox(
                         height: 60,
                       ),
-                      const PorojectStatisticHeader(),
-                      const SizedBox(
+                      PorojectStatisticHeader(),
+                      SizedBox(
                         height: 35,
                       ),
-                      CustomContainer(
-                        padding: const EdgeInsets.all(50),
-                        borderRadius: 40,
-                        widget: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Total visits",
-                                  style: AppStyles.styleRegular20,
-                                  textAlign: TextAlign.left,
-                                ),
-                                Text(
-                                  "42,43M",
-                                  style: AppStyles.styleMedium32
-                                      .copyWith(color: const Color(0xff7166f9)),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ],
-                            ),
-                            const Divider(
-                              color: Color(0xffC4C4C4),
-                              height: 40,
-                            ),
-                            const CustomLineChart(),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
+                      PorojectStatisticTopSection(),
+                      SizedBox(
                         height: 30,
                       ),
-                      CustomContainer(
-                        padding: const EdgeInsets.only(
-                            left: 33, right: 33, top: 30, bottom: 10),
-                        borderRadius: 32,
-                        widget: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Traffic Sources",
-                                style: AppStyles.styleRegular20
-                                    .copyWith(color: const Color(0xff000000))),
-                            const Divider(
-                              color: Color(0xffC4C4C4),
-                              height: 40,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      const SizedBox(
-                                        height: 20,
-                                      ),
-                                      CustomContainer(
-                                        color: const Color(0xFFEFEFF8),
-                                        borderRadius: 12,
-                                        padding: const EdgeInsets.only(
-                                            left: 45,
-                                            right: 55,
-                                            top: 5,
-                                            bottom: 5),
-                                        widget: Row(
-                                          children: [
-                                            Text(
-                                              "sourse",
-                                              style: AppStyles.styleRegular12
-                                                  .copyWith(
-                                                      color: const Color(
-                                                          0xffa9a9a9)),
-                                            ),
-                                            const Spacer(),
-                                            Text(
-                                              "Traffic sourse,%",
-                                              style: AppStyles.styleRegular12
-                                                  .copyWith(
-                                                      color: const Color(
-                                                          0xffa9a9a9)),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(
-                                        height: 17,
-                                      ),
-                                      const TrafficSourcesListTile(
-                                        color: Color(0xFF4CD7F6),
-                                        title: "Direct",
-                                      ),
-                                      const TrafficSourcesListTile(
-                                        color: Color(0xFFE17CFD),
-                                        title: "Search",
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                const CircularPercentageIndicator(),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
+                      PorojectStatisticBottomSection(),
+                      SizedBox(
                         height: 30,
-                      )
+                      ),
                     ],
                   ),
                 ),
               ],
             )),
-        const SizedBox(
+        SizedBox(
           width: 50,
         )
       ],
+    );
+  }
+}
+
+class PorojectStatisticBottomSection extends StatelessWidget {
+  const PorojectStatisticBottomSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(child: TrafficSourceWidget()),
+        SizedBox(
+          width: 20,
+        ),
+        Expanded(child: TrafficSourceWidget()),
+      ],
+    );
+  }
+}
+
+class GridViewItem extends StatelessWidget {
+  const GridViewItem({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // Adjust based on your needs
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.bottomRight, // Start from bottom right
+          end: Alignment.topLeft, // End at top left
+          colors: [
+            Color(0xFFE048D7), // First color (Pinkish)
+            Color(0xFF4DB7F2),
+            // Second color (Light blue)
+            Color(0xFFE048D7), // Third color (Blue Violet)
+          ],
+          // Control the transition between colors
+        ),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0xFFE048D7),
+            offset: Offset(0, 5), // Horizontal and vertical offset
+            blurRadius: 20, // Softness of the shadow
+            spreadRadius: -10, // Controls the size of the shadow
+          ),
+        ],
+        borderRadius: BorderRadius.circular(20), // Rounded corners
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Icon(Icons.insert_chart, color: Colors.white),
+            const Spacer(),
+            const Text(
+              '42,34%',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Bounce Rate',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white.withOpacity(0.7),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

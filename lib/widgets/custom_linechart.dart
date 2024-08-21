@@ -19,7 +19,7 @@ class _CustomLineChartState extends State<CustomLineChart> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.70,
+      aspectRatio: 500 / 200,
       child: Padding(
         padding: const EdgeInsets.only(
           right: 18,
