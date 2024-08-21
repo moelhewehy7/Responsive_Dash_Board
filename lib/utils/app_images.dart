@@ -1,53 +1,71 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
+
   /// Assets for imagesAvgVisitDuration
   /// assets/images/Avg_Visit_Duration.svg
-  static const String imagesAvgVisitDuration = "assets/images/Avg_Visit_Duration.svg";
-/// Assets for imagesBoroTeam
+  static const String imagesAvgVisitDuration =
+      "assets/images/Avg_Visit_Duration.svg";
+
+  /// Assets for imagesBoroTeam
   /// assets/images/boroTeam.svg
   static const String imagesBoroTeam = "assets/images/boroTeam.svg";
-/// Assets for imagesBoroteamadd
+
+  /// Assets for imagesBoroteamadd
   /// assets/images/boroteamadd.svg
   static const String imagesBoroteamadd = "assets/images/boroteamadd.svg";
-/// Assets for imagesBounceRate
+
+  /// Assets for imagesBounceRate
   /// assets/images/BounceRate.svg
   static const String imagesBounceRate = "assets/images/BounceRate.svg";
-/// Assets for imagesBriefs
+
+  /// Assets for imagesBriefs
   /// assets/images/briefs.svg
   static const String imagesBriefs = "assets/images/briefs.svg";
-/// Assets for imagesHelp
+
+  /// Assets for imagesHelp
   /// assets/images/help.svg
   static const String imagesHelp = "assets/images/help.svg";
-/// Assets for imagesLogout
+
+  /// Assets for imagesLogout
   /// assets/images/logout.svg
   static const String imagesLogout = "assets/images/logout.svg";
-/// Assets for imagesMyCompetitors
+
+  /// Assets for imagesMyCompetitors
   /// assets/images/myCompetitors.svg
   static const String imagesMyCompetitors = "assets/images/myCompetitors.svg";
-/// Assets for imagesOpportunites
+
+  /// Assets for imagesOpportunites
   /// assets/images/opportunites.svg
   static const String imagesOpportunites = "assets/images/opportunites.svg";
-/// Assets for imagesOverview
+
+  /// Assets for imagesOverview
   /// assets/images/overview.svg
   static const String imagesOverview = "assets/images/overview.svg";
-/// Assets for imagesPagespervisit
+
+  /// Assets for imagesPagespervisit
   /// assets/images/Pagespervisit.svg
   static const String imagesPagespervisit = "assets/images/Pagespervisit.svg";
-/// Assets for imagesPorojectstatistic
+
+  /// Assets for imagesPorojectstatistic
   /// assets/images/Porojectstatistic.svg
-  static const String imagesPorojectstatistic = "assets/images/Porojectstatistic.svg";
-/// Assets for imagesSaved
+  static const String imagesPorojectstatistic =
+      "assets/images/Porojectstatistic.svg";
+
+  /// Assets for imagesSaved
   /// assets/images/saved.svg
   static const String imagesSaved = "assets/images/saved.svg";
-/// Assets for imagesSettings
+
+  /// Assets for imagesSettings
   /// assets/images/settings.svg
   static const String imagesSettings = "assets/images/settings.svg";
-/// Assets for imagesTotalMonthlyVisit
+
+  /// Assets for imagesTotalMonthlyVisit
   /// assets/images/Total_Monthly_Visit.svg
-  static const String imagesTotalMonthlyVisit = "assets/images/Total_Monthly_Visit.svg";
-/// Assets for imagesZahra
+  static const String imagesTotalMonthlyVisit =
+      "assets/images/Total_Monthly_Visit.svg";
+
+  /// Assets for imagesZahra
   /// assets/images/zahra.png
   static const String imagesZahra = "assets/images/zahra.png";
 }
-

@@ -12,8 +12,8 @@ class CustomLineChart extends StatefulWidget {
 
 class _CustomLineChartState extends State<CustomLineChart> {
   List<Color> gradientColors = [
-    Color(0xff8E7CFD),
-    Color(0xffB866F9),
+    const Color(0xff8E7CFD),
+    const Color(0xffB866F9),
   ];
 
   @override
@@ -35,7 +35,8 @@ class _CustomLineChartState extends State<CustomLineChart> {
   }
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
-    final style = AppStyles.styleMedium10.copyWith(color: Color(0xffaeaeae));
+    final style =
+        AppStyles.styleMedium10.copyWith(color: const Color(0xffaeaeae));
     Widget text;
     switch (value.toInt()) {
       case 1:
@@ -90,7 +91,7 @@ class _CustomLineChartState extends State<CustomLineChart> {
     }
 
     return Text(text,
-        style: AppStyles.styleMedium10.copyWith(color: Color(0xffaeaeae)),
+        style: AppStyles.styleMedium10.copyWith(color: const Color(0xffaeaeae)),
         textAlign: TextAlign.right);
   }
 

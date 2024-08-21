@@ -18,7 +18,7 @@ class CustomContainer extends StatelessWidget {
         decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius)),
-            color: color ?? Color(0xFFf8f8fb)),
+            color: color ?? const Color(0xFFf8f8fb)),
         child: widget);
   }
 }

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
+import 'package:responsive_dash_board/widgets/circular_percentage_indicator.dart';
 import 'package:responsive_dash_board/widgets/custom_container.dart';
 import 'package:responsive_dash_board/widgets/dashboard_header.dart';
 
 import 'package:responsive_dash_board/widgets/project_header.dart';
+import 'package:responsive_dash_board/widgets/traffic_sources_ListTile.dart';
 
+import '../utils/app_styles.dart';
 import '../widgets/custom_drawer.dart';
 import '../widgets/custom_linechart.dart';
 
@@ -73,7 +74,7 @@ class DeskTopLayout extends StatelessWidget {
                       ),
                       CustomContainer(
                         padding: const EdgeInsets.only(
-                            left: 33, right: 33, top: 30, bottom: 24),
+                            left: 33, right: 33, top: 30, bottom: 10),
                         borderRadius: 32,
                         widget: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,44 +86,69 @@ class DeskTopLayout extends StatelessWidget {
                               color: Color(0xffC4C4C4),
                               height: 40,
                             ),
-                            const CustomContainer(
-                              color: Color(0xFFEFEFF8),
-                              borderRadius: 12,
-                              padding: EdgeInsets.only(
-                                  left: 45, right: 55, top: 5, bottom: 5),
-                              widget: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "sourse",
-                                    style: TextStyle(
-                                      fontFamily: "Roboto",
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xffa9a9a9),
-                                      height: 32 / 12,
-                                    ),
-                                    textAlign: TextAlign.left,
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      const SizedBox(
+                                        height: 20,
+                                      ),
+                                      CustomContainer(
+                                        color: const Color(0xFFEFEFF8),
+                                        borderRadius: 12,
+                                        padding: const EdgeInsets.only(
+                                            left: 45,
+                                            right: 55,
+                                            top: 5,
+                                            bottom: 5),
+                                        widget: Row(
+                                          children: [
+                                            Text(
+                                              "sourse",
+                                              style: AppStyles.styleRegular12
+                                                  .copyWith(
+                                                      color: const Color(
+                                                          0xffa9a9a9)),
+                                            ),
+                                            const Spacer(),
+                                            Text(
+                                              "Traffic sourse,%",
+                                              style: AppStyles.styleRegular12
+                                                  .copyWith(
+                                                      color: const Color(
+                                                          0xffa9a9a9)),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 17,
+                                      ),
+                                      const TrafficSourcesListTile(
+                                        color: Color(0xFF4CD7F6),
+                                        title: "Direct",
+                                      ),
+                                      const TrafficSourcesListTile(
+                                        color: Color(0xFFE17CFD),
+                                        title: "Search",
+                                      )
+                                    ],
                                   ),
-                                  Text(
-                                    "Traffic sourse,%",
-                                    style: TextStyle(
-                                      fontFamily: "Roboto",
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Color(0xffb2b2b3),
-                                      height: 32 / 12,
-                                    ),
-                                    textAlign: TextAlign.left,
-                                  )
-                                ],
-                              ),
+                                ),
+                                const SizedBox(
+                                  width: 30,
+                                ),
+                                const CircularPercentageIndicator(),
+                              ],
                             ),
-                            CircularPercentageIndicator(),
                           ],
                         ),
                       ),
+                      const SizedBox(
+                        height: 30,
+                      )
                     ],
                   ),
                 ),
@@ -132,33 +158,6 @@ class DeskTopLayout extends StatelessWidget {
           width: 50,
         )
       ],
-    );
-  }
-}
-
-class CircularPercentageIndicator extends StatelessWidget {
-  const CircularPercentageIndicator({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CircularPercentIndicator(
-      radius: 80,
-      lineWidth: 20,
-      percent: 0.5,
-      center: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("50%",
-              style: AppStyles.styleMedium32
-                  .copyWith(color: const Color(0xff000000))),
-          Text("Direct ",
-              style: AppStyles.styleRegular12
-                  .copyWith(color: const Color(0xff9b9b9b)))
-        ],
-      ),
-      backgroundColor: const Color(0xFFE17CFD),
-      progressColor: const Color(0xFF4CD7F6),
-      circularStrokeCap: CircularStrokeCap.round,
     );
   }
 }
