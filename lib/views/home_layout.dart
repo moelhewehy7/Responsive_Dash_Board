@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/views/desktop_layout.dart';
+import 'package:responsive_dash_board/views/tablet_layout.dart';
 import 'package:responsive_dash_board/widgets/adaptive_layout.dart';
 
 class HomeLayout extends StatelessWidget {
@@ -12,9 +13,7 @@ class HomeLayout extends StatelessWidget {
           mobileLayout: (context) => const Center(
                 child: Text('Mobile'),
               ),
-          tabletLayout: (context) => const Center(
-                child: Text('Tablet'),
-              ),
+          tabletLayout: (context) => const TabletLayout(),
           desktopLayout: (context) => const DeskTopLayout()),
     );
   }

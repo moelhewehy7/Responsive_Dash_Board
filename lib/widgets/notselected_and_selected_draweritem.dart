@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_dash_board/models/drawer_model.dart';
@@ -28,7 +29,8 @@ class NotSelectedDrawerItem extends StatelessWidget {
           ),
           const SizedBox(
               width: 18), // Optional: Add space between leading and title
-          Expanded(
+          FittedBox(
+            fit: BoxFit.scaleDown,
             child: Text(
               drawerModel.title,
               style: AppStyles.styleRegular14.copyWith(
@@ -76,11 +78,13 @@ class SelectedDrawerItem extends StatelessWidget {
           ),
           const SizedBox(
               width: 18), // Optional: Add space between leading and title
-          Expanded(
+          FittedBox(
+            fit: BoxFit.scaleDown,
             child: Text(
               drawerModel.title,
             ),
           ),
+          Spacer(),
           Container(
             width: 3.27,
             height: 64, // Adjust height as needed

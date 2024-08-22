@@ -11,10 +11,9 @@ class PorojectStatisticChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomContainer(
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.all(50),
       borderRadius: 40,
       widget: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

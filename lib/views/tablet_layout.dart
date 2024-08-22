@@ -1,5 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/widgets/custom_GridView.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
+import 'package:responsive_dash_board/widgets/dashboard_header.dart';
+import 'package:responsive_dash_board/widgets/project_header.dart';
+
+import '../widgets/project_stats_chart.dart';
 
 class TabletLayout extends StatelessWidget {
   const TabletLayout({super.key});
@@ -7,7 +13,51 @@ class TabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [Expanded(child: CustomDrawer())],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(child: CustomDrawer()),
+        SizedBox(
+          width: 50,
+        ),
+        Expanded(
+            flex: 3,
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      // ignore: prefer_const_constructors
+                      DashboardHeader(),
+                    ],
+                  ),
+                ),
+                SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 35,
+                        ),
+                        Expanded(child: PorojectStatisticChart()),
+                        Expanded(child: CustomGridView()),
+                        // SizedBox(
+                        //   height: 30,
+                        // ),
+                        // // PorojectStatisticBottomSection(),
+                        // SizedBox(
+                        //   height: 30,
+                        // ),
+                      ],
+                    ))
+              ],
+            )),
+        SizedBox(
+          width: 20,
+        ),
+      ],
     );
   }
 }

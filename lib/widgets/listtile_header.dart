@@ -15,6 +15,7 @@ class ListTileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       leading: leading,
       title: Text(
         title,
