@@ -18,17 +18,19 @@ class _CustomLineChartState extends State<CustomLineChart> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 500 / 200,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          right: 18,
-          left: 12,
-          top: 24,
-          bottom: 12,
-        ),
-        child: LineChart(
-          mainData(),
+    return Expanded(
+      child: AspectRatio(
+        aspectRatio: 1.5,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            right: 18,
+            left: 12,
+            top: 24,
+            bottom: 12,
+          ),
+          child: LineChart(
+            mainData(),
+          ),
         ),
       ),
     );
@@ -130,7 +132,7 @@ class _CustomLineChartState extends State<CustomLineChart> {
             showTitles: true,
             interval: 1,
             getTitlesWidget: leftTitleWidgets,
-            reservedSize: 80,
+            reservedSize: 55,
           ),
         ),
       ),

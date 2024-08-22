@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:responsive_dash_board/widgets/circular_percentage_indicator.dart';
 import 'package:responsive_dash_board/widgets/custom_container.dart';
 import 'package:responsive_dash_board/widgets/traffic_sources_ListTile.dart';
@@ -25,6 +27,7 @@ class TrafficSourceWidget extends StatelessWidget {
             height: 40,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
@@ -37,15 +40,15 @@ class TrafficSourceWidget extends StatelessWidget {
                       color: const Color(0xFFEFEFF8),
                       borderRadius: 12,
                       padding: const EdgeInsets.only(
-                          left: 45, right: 55, top: 10, bottom: 10),
+                          left: 20, right: 20, top: 10, bottom: 10),
                       widget: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
                             "sourse",
                             style: AppStyles.styleRegular12
                                 .copyWith(color: const Color(0xffa9a9a9)),
                           ),
-                          const Spacer(),
                           Text(
                             "Traffic sourse,%",
                             style: AppStyles.styleRegular12
@@ -67,9 +70,6 @@ class TrafficSourceWidget extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
-              const SizedBox(
-                width: 30,
               ),
               const CircularPercentageIndicator(),
             ],

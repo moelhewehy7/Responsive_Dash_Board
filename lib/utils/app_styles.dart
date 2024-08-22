@@ -28,19 +28,21 @@ abstract class AppStyles {
     fontFamily: "Roboto",
     fontSize: 10,
     fontWeight: FontWeight.w500,
-    height: 0,
   );
   static TextStyle styleMedium32 = const TextStyle(
     color: Color(0xFF2B2F42),
     fontSize: 32,
     fontWeight: FontWeight.w500,
-    height: 0,
   );
   static TextStyle styleMedium15 = const TextStyle(
     color: Colors.black,
     fontSize: 15,
     fontWeight: FontWeight.w500,
-    height: 0,
+  );
+  static TextStyle styleMedium14 = const TextStyle(
+    color: Colors.black,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
   );
   static TextStyle styleMedium20 = const TextStyle(
     color: Colors.black,

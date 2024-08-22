@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:responsive_dash_board/widgets/custom_GridView.dart';
 import 'package:responsive_dash_board/widgets/project_stats_chart.dart';
 
 class PorojectStatisticTopSection extends StatelessWidget {
@@ -10,22 +11,16 @@ class PorojectStatisticTopSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
+    return const Expanded(
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Expanded(child: PorojectStatisticChart()),
-        // Expanded(
-        //   child: GridView.builder(
-        //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //       crossAxisCount: 2,
-        //     ),
-        //     itemCount: 2,
-        //     itemBuilder: (BuildContext context, int index) {
-        //       return Card(child: Center(child: Text('Item $index')));
-        //       ;
-        //     },
-        //   ),
-        // ),
-      ],
+        SizedBox(
+          width: 20,
+        ),
+        Expanded(
+          child: CustomGridView(),
+        )
+      ]),
     );
   }
 }

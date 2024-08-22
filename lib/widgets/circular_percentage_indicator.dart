@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
@@ -11,11 +9,13 @@ class CircularPercentageIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const ShapeDecoration(
-        shape: CircleBorder(
-          side: BorderSide(width: 18, color: Color(0xFFF3F3F9)),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: const Color(0xFFF3F3F9), // Circle border color
+          width: 18, // Circle border width
         ),
-      ),
+      ), // Outer circle diameter
       child: CircularPercentIndicator(
         radius: 80,
         lineWidth: 20,
