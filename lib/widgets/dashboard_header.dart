@@ -29,6 +29,8 @@ class DashboardHeader extends StatelessWidget {
               title: 'Boro team'),
         ),
         SvgPicture.asset(Assets.imagesBoroteamadd),
+
+        // ignore: prefer_const_constructors
         Spacer(),
         Expanded(
           child: ListTileHeader(

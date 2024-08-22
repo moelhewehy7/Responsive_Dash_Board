@@ -4,8 +4,6 @@ import 'package:responsive_dash_board/models/grid_model.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
 import 'package:responsive_dash_board/widgets/custom_container.dart';
 
-import '../utils/app_images.dart';
-
 class GridViewSelectedItem extends StatelessWidget {
   const GridViewSelectedItem({
     super.key,
@@ -69,7 +67,7 @@ class GridViewSelectedItem extends StatelessWidget {
             Text(
               gridModel.title,
               style: AppStyles.styleMedium32
-                  .copyWith(color: const Color(0xfff6f6fb)),
+                  .copyWith(color: const Color(0xfff6f6fb), fontSize: 26),
               textAlign: TextAlign.left,
             ),
             Text(
@@ -115,8 +113,9 @@ class GridViewNotSelectedItem extends StatelessWidget {
                   ),
                   Text(
                     gridModel.percentage,
-                    style: AppStyles.styleRegular12
-                        .copyWith(color: const Color(0xff000000)),
+                    style: AppStyles.styleRegular12.copyWith(
+                      color: const Color(0xff000000),
+                    ),
                   )
                 ],
               ),
@@ -126,7 +125,7 @@ class GridViewNotSelectedItem extends StatelessWidget {
           Text(
             gridModel.title,
             style: AppStyles.styleMedium32
-                .copyWith(color: const Color(0xff2b2f42)),
+                .copyWith(color: const Color(0xff2b2f42), fontSize: 24),
             textAlign: TextAlign.left,
           ),
           Text(

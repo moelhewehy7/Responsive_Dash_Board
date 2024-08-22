@@ -22,8 +22,8 @@ class NotSelectedDrawerItem extends StatelessWidget {
             padding: const EdgeInsets.only(left: 38),
             child: SvgPicture.asset(
               drawerModel.image,
-              colorFilter:
-                  ColorFilter.mode(color ?? Color(0xFF000000), BlendMode.srcIn),
+              colorFilter: ColorFilter.mode(
+                  color ?? const Color(0xFF000000), BlendMode.srcIn),
             ),
           ),
           const SizedBox(
