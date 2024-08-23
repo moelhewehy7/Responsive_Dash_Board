@@ -26,7 +26,7 @@ class DeskTopLayout extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      DashboardHeader(),
+                      DashboardDesktopHeader(),
                     ],
                   ),
                 ),
@@ -37,7 +37,7 @@ class DeskTopLayout extends StatelessWidget {
                       SizedBox(
                         height: 60,
                       ),
-                      PorojectStatisticHeader(),
+                      ProjectStatisticHeaderForDesktop(),
                       SizedBox(
                         height: 35,
                       ),

@@ -10,7 +10,6 @@ class TrafficSourceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log(MediaQuery.sizeOf(context).width.toString());
     double width = MediaQuery.of(context).size.width;
     if (width >= 900 && width < 1280) {
       return const TrafficSourceForSmallerDesktop();

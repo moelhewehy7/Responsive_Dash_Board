@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dash_board/models/grid_model.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
@@ -13,6 +15,7 @@ class GridViewSelectedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Container(
       // Adjust based on your needs
       decoration: BoxDecoration(
@@ -35,18 +38,22 @@ class GridViewSelectedItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(32),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+        padding: EdgeInsets.symmetric(
+          horizontal: width <= 415 ? 10 : 32,
+          vertical: width <= 415 ? 10 : 32,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SvgPicture.asset(
                   gridModel.image,
                   colorFilter: const ColorFilter.mode(
                       Color(0xffFDFDFD), BlendMode.srcIn),
                 ),
+                Spacer(),
                 Row(
                   children: [
                     Icon(gridModel.icon, color: gridModel.color
@@ -64,18 +71,26 @@ class GridViewSelectedItem extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            Text(
-              gridModel.title,
-              style: AppStyles.styleMedium26(context).copyWith(
-                fontSize: 30,
-                color: const Color(0xfff6f6fb),
+            Expanded(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  gridModel.title,
+                  style: AppStyles.styleMedium26(context).copyWith(
+                    fontSize: 32,
+                    color: const Color(0xfff6f6fb),
+                  ),
+                  textAlign: TextAlign.left,
+                ),
               ),
-              textAlign: TextAlign.left,
             ),
-            Text(
-              gridModel.subtitle,
-              style: AppStyles.styleMedium14(context)
-                  .copyWith(color: const Color(0xfff6f6fb)),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                gridModel.subtitle,
+                style: AppStyles.styleMedium14(context)
+                    .copyWith(color: const Color(0xfff6f6fb)),
+              ),
             )
           ],
         ),
@@ -93,20 +108,25 @@ class GridViewNotSelectedItem extends StatelessWidget {
   final GridModel gridModel;
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return CustomContainer(
-      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+      padding: EdgeInsets.symmetric(
+        horizontal: width <= 415 ? 10 : 32,
+        vertical: width <= 415 ? 10 : 32,
+      ),
       borderRadius: 32,
       widget: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SvgPicture.asset(
                 gridModel.image,
                 colorFilter:
                     const ColorFilter.mode(Color(0xff7166F9), BlendMode.srcIn),
               ),
+              Spacer(),
               Row(
                 children: [
                   Icon(
@@ -124,18 +144,26 @@ class GridViewNotSelectedItem extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Text(
-            gridModel.title,
-            style: AppStyles.styleMedium26(context).copyWith(
-              fontSize: 30,
-              color: const Color(0xff2b2f42),
+          Expanded(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                gridModel.title,
+                style: AppStyles.styleMedium26(context).copyWith(
+                  fontSize: 32,
+                  color: const Color(0xff2b2f42),
+                ),
+                textAlign: TextAlign.left,
+              ),
             ),
-            textAlign: TextAlign.left,
           ),
-          Text(
-            gridModel.subtitle,
-            style: AppStyles.styleMedium14(context)
-                .copyWith(color: const Color(0xff636676)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              gridModel.subtitle,
+              style: AppStyles.styleMedium14(context)
+                  .copyWith(color: const Color(0xff636676)),
+            ),
           )
         ],
       ),

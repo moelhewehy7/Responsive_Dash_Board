@@ -10,8 +10,9 @@ class PorojectStatisticChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return CustomContainer(
-      padding: const EdgeInsets.all(50),
+      padding: EdgeInsets.all(width <= 450 ? 10 : 50),
       borderRadius: 40,
       widget: Column(
         children: [

@@ -111,14 +111,14 @@ double getResponsiveText(context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
   double rsponsiveText = fontSize * scaleFactor;
   double maxFontSize = fontSize * 1.3;
-  double minFontSize = fontSize * 1;
+  double minFontSize = fontSize * 0.8;
   return rsponsiveText.clamp(minFontSize, maxFontSize);
 }
 
 double getScaleFactor(BuildContext context) {
   double width = MediaQuery.sizeOf(context).width;
   if (width < SizeConfig.tabletSize) {
-    return width / 550;
+    return width / 700;
   } else if (width < SizeConfig.deskTopSize) {
     return width / 1100;
   } else {
