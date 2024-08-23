@@ -37,8 +37,8 @@ class _CustomLineChartState extends State<CustomLineChart> {
   }
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
-    final style =
-        AppStyles.styleMedium10.copyWith(color: const Color(0xffaeaeae));
+    final style = AppStyles.styleMedium10(context)
+        .copyWith(color: const Color(0xffaeaeae));
     Widget text;
     switch (value.toInt()) {
       case 1:
@@ -93,7 +93,8 @@ class _CustomLineChartState extends State<CustomLineChart> {
     }
 
     return Text(text,
-        style: AppStyles.styleMedium10.copyWith(color: const Color(0xffaeaeae)),
+        style: AppStyles.styleMedium10(context)
+            .copyWith(color: const Color(0xffaeaeae)),
         textAlign: TextAlign.right);
   }
 

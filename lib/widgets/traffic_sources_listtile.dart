@@ -22,10 +22,10 @@ class TrafficSourcesListTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style:
-            AppStyles.styleRegular12.copyWith(color: const Color(0xff000000)),
+        style: AppStyles.styleRegular12(context)
+            .copyWith(color: const Color(0xff000000)),
       ),
-      trailing: Text("50", style: AppStyles.styleRegular12),
+      trailing: Text("50", style: AppStyles.styleRegular12(context)),
     );
   }
 }

@@ -65,10 +65,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     child: const Icon(Icons.search, color: Colors.white),
                   ),
                   title: Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      'Concured',
-                      style: AppStyles.styleMedium20,
+                    padding: const EdgeInsets.only(right: 20, left: 5),
+                    child: FittedBox(
+                      alignment: Alignment.centerLeft,
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Concured',
+                        style: AppStyles.styleMedium20(context),
+                      ),
                     ),
                   ))),
           const SliverToBoxAdapter(

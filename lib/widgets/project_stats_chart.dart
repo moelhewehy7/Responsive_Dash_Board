@@ -20,12 +20,12 @@ class PorojectStatisticChart extends StatelessWidget {
             children: [
               Text(
                 "Total visits",
-                style: AppStyles.styleRegular20,
+                style: AppStyles.styleRegular20(context),
                 textAlign: TextAlign.left,
               ),
               Text(
                 "42,43M",
-                style: AppStyles.styleMedium32
+                style: AppStyles.styleMedium32(context)
                     .copyWith(color: const Color(0xff7166f9)),
                 textAlign: TextAlign.left,
               ),

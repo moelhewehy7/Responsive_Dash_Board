@@ -31,13 +31,18 @@ class NotSelectedDrawerItem extends StatelessWidget {
               width: 18), // Optional: Add space between leading and title
           FittedBox(
             fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
             child: Text(
               drawerModel.title,
-              style: AppStyles.styleRegular14.copyWith(
+              style: AppStyles.styleRegular12(context).copyWith(
                 color: color ?? const Color(0xFF000000),
               ),
             ),
           ),
+          Spacer(),
+          SizedBox(
+            width: 3.27,
+          )
         ],
       ),
     );
@@ -82,6 +87,7 @@ class SelectedDrawerItem extends StatelessWidget {
             fit: BoxFit.scaleDown,
             child: Text(
               drawerModel.title,
+              style: AppStyles.styleRegular12(context),
             ),
           ),
           Spacer(),

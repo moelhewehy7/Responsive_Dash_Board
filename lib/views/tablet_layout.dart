@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/widgets/custom_GridView.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
 import 'package:responsive_dash_board/widgets/dashboard_header.dart';
-import 'package:responsive_dash_board/widgets/project_header.dart';
+import 'package:responsive_dash_board/widgets/traffic_source_desktop.dart';
 
 import '../widgets/project_stats_chart.dart';
 
@@ -42,7 +42,15 @@ class TabletLayout extends StatelessWidget {
                           height: 35,
                         ),
                         Expanded(child: PorojectStatisticChart()),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Expanded(child: CustomGridView()),
+                        TrafficSourceDesktop(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TrafficSourceDesktop()
                         // SizedBox(
                         //   height: 30,
                         // ),

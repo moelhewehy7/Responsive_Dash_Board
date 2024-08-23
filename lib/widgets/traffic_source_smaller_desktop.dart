@@ -20,7 +20,7 @@ class TrafficSourceForSmallerDesktop extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text("Traffic Sources",
-              style: AppStyles.styleRegular20
+              style: AppStyles.styleRegular20(context)
                   .copyWith(color: const Color(0xff000000))),
           const Divider(
             color: Color(0xffC4C4C4),
@@ -46,12 +46,12 @@ class TrafficSourceForSmallerDesktop extends StatelessWidget {
                         children: [
                           Text(
                             "sourse",
-                            style: AppStyles.styleRegular12
+                            style: AppStyles.styleRegular12(context)
                                 .copyWith(color: const Color(0xffa9a9a9)),
                           ),
                           Text(
                             "Traffic sourse,%",
-                            style: AppStyles.styleRegular12
+                            style: AppStyles.styleRegular12(context)
                                 .copyWith(color: const Color(0xffa9a9a9)),
                           )
                         ],

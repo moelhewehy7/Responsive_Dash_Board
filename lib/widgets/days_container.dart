@@ -16,7 +16,7 @@ class DaysContainer extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
       child: Text(text,
-          style: AppStyles.styleBold14.copyWith(
+          style: AppStyles.styleBold14(context).copyWith(
               color: isSelected ? Colors.white : const Color(0xFF2B2F42))),
     );
   }

@@ -54,7 +54,7 @@ class GridViewSelectedItem extends StatelessWidget {
                         ),
                     Text(
                       gridModel.percentage,
-                      style: AppStyles.styleRegular12.copyWith(
+                      style: AppStyles.styleRegular12(context).copyWith(
                         color: Colors.white,
                       ),
                       textAlign: TextAlign.left,
@@ -66,13 +66,15 @@ class GridViewSelectedItem extends StatelessWidget {
             const Spacer(),
             Text(
               gridModel.title,
-              style: AppStyles.styleMedium32
-                  .copyWith(color: const Color(0xfff6f6fb), fontSize: 26),
+              style: AppStyles.styleMedium26(context).copyWith(
+                fontSize: 30,
+                color: const Color(0xfff6f6fb),
+              ),
               textAlign: TextAlign.left,
             ),
             Text(
               gridModel.subtitle,
-              style: AppStyles.styleMedium14
+              style: AppStyles.styleMedium14(context)
                   .copyWith(color: const Color(0xfff6f6fb)),
             )
           ],
@@ -113,7 +115,7 @@ class GridViewNotSelectedItem extends StatelessWidget {
                   ),
                   Text(
                     gridModel.percentage,
-                    style: AppStyles.styleRegular12.copyWith(
+                    style: AppStyles.styleRegular12(context).copyWith(
                       color: const Color(0xff000000),
                     ),
                   )
@@ -124,14 +126,16 @@ class GridViewNotSelectedItem extends StatelessWidget {
           const Spacer(),
           Text(
             gridModel.title,
-            style: AppStyles.styleMedium32
-                .copyWith(color: const Color(0xff2b2f42), fontSize: 24),
+            style: AppStyles.styleMedium26(context).copyWith(
+              fontSize: 30,
+              color: const Color(0xff2b2f42),
+            ),
             textAlign: TextAlign.left,
           ),
           Text(
             gridModel.subtitle,
-            style: AppStyles.styleMedium14
-                .copyWith(color: const Color(0xff2b2f42)),
+            style: AppStyles.styleMedium14(context)
+                .copyWith(color: const Color(0xff636676)),
           )
         ],
       ),

@@ -25,7 +25,7 @@ class _PorojectStatisticHeaderState extends State<PorojectStatisticHeader> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text("Poroject statistic", style: AppStyles.styleRegular36),
+        Text("Poroject statistic", style: AppStyles.styleRegular36(context)),
         const SizedBox(
           width: 20,
         ),

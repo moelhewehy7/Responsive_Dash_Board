@@ -24,10 +24,10 @@ class CircularPercentageIndicator extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("50%",
-                style: AppStyles.styleMedium32
+                style: AppStyles.styleMedium32(context)
                     .copyWith(color: const Color(0xff000000))),
             Text("Direct ",
-                style: AppStyles.styleRegular12
+                style: AppStyles.styleRegular12(context)
                     .copyWith(color: const Color(0xff9b9b9b)))
           ],
         ),
