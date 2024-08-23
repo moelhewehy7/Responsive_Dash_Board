@@ -16,7 +16,7 @@ class TabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
-    print(width);
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

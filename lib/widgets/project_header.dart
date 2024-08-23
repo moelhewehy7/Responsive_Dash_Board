@@ -69,9 +69,11 @@ class _PorojectStatisticHeaderforMobState
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text("Poroject statistic",
                 style: AppStyles.styleRegular36(context)),
@@ -85,6 +87,7 @@ class _PorojectStatisticHeaderforMobState
           height: 10,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children:
               PorojectStatisticHeaderforMob.items.asMap().entries.map((e) {
             int index = e.key;

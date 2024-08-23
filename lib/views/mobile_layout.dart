@@ -20,7 +20,7 @@ class MobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    print(MediaQuery.sizeOf(context).width);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
@@ -35,6 +35,7 @@ class MobileLayout extends StatelessWidget {
           SliverFillRemaining(
               hasScrollBody: false,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     height: 20,
@@ -42,6 +43,9 @@ class MobileLayout extends StatelessWidget {
                   FittedBox(
                       fit: BoxFit.scaleDown,
                       child: PorojectStatisticHeaderforMob()),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Expanded(child: PorojectStatisticChart()),
                   SizedBox(
                     height: 20,

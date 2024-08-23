@@ -1,10 +1,14 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 import 'package:responsive_dash_board/views/home_layout.dart';
 
-void main() {
-  runApp(const ResponsiveDashBoard());
-}
+void main() => runApp(
+      DevicePreview(
+        enabled: false,
+        builder: (context) => ResponsiveDashBoard(), // Wrap your app
+      ),
+    );
 
 class ResponsiveDashBoard extends StatelessWidget {
   const ResponsiveDashBoard({super.key});
@@ -13,6 +17,7 @@ class ResponsiveDashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: DevicePreview.locale(context),
       theme: ThemeData(
         fontFamily: 'Roboto', // Set the default font family
       ),
