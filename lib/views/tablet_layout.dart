@@ -45,7 +45,7 @@ class TabletLayout extends StatelessWidget {
                         const SizedBox(
                           height: 30,
                         ),
-                        width <= 920 && width > 855
+                        width <= 925 && width > 855
                             ? const PorojectStatisticHeaderforMob()
                             : const ProjectStatisticHeaderForDesktop(),
                         const SizedBox(
