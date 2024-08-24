@@ -4,4 +4,4 @@ A new Flutter project.
 
 ## Project Demo
 
-[![Watch the video]](https://github.com/user-attachments/assets/18ce7ef0-66dc-4e93-99ca-df92424365a7)
+[![Watch the video]](https://github.com/user-attachments/assets/7539f3c2-a5b2-4c3a-beaa-fe62169c00a7)
