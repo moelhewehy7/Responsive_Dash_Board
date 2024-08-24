@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -25,9 +23,9 @@ class MobileLayout extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Column(
-              children: const [
+              children: [
                 DashboardHeader(),
               ],
             ),
@@ -37,30 +35,30 @@ class MobileLayout extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  FittedBox(
+                  const FittedBox(
                       fit: BoxFit.scaleDown,
                       child: PorojectStatisticHeaderforMob()),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Expanded(child: PorojectStatisticChart()),
-                  SizedBox(
+                  const Expanded(child: PorojectStatisticChart()),
+                  const SizedBox(
                     height: 20,
                   ),
-                  Expanded(child: CustomGridView()),
+                  const Expanded(child: CustomGridView()),
                   width <= 490
-                      ? TrafficSourceForSmallerDesktop()
-                      : TrafficSourceDesktop(),
-                  SizedBox(
+                      ? const TrafficSourceForSmallerDesktop()
+                      : const TrafficSourceDesktop(),
+                  const SizedBox(
                     height: 20,
                   ),
                   width <= 490
-                      ? TrafficSourceForSmallerDesktop()
-                      : TrafficSourceDesktop(),
-                  SizedBox(
+                      ? const TrafficSourceForSmallerDesktop()
+                      : const TrafficSourceDesktop(),
+                  const SizedBox(
                     height: 20,
                   ),
                 ],
