@@ -32,7 +32,7 @@ class _ProjectStatisticHeaderForDesktopState
           width: 20,
         ),
         SvgPicture.asset(Assets.imagesPorojectstatistic),
-        Spacer(),
+        const Spacer(),
         Row(
           children:
               ProjectStatisticHeaderForDesktop.items.asMap().entries.map((e) {

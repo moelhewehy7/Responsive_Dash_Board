@@ -39,8 +39,8 @@ class NotSelectedDrawerItem extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(),
-          SizedBox(
+          const Spacer(),
+          const SizedBox(
             width: 3.27,
           )
         ],
@@ -90,7 +90,7 @@ class SelectedDrawerItem extends StatelessWidget {
               style: AppStyles.styleRegular12(context),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Container(
             width: 3.27,
             height: 64, // Adjust height as needed

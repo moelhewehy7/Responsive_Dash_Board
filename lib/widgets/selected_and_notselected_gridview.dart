@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dash_board/models/grid_model.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
@@ -53,7 +51,7 @@ class GridViewSelectedItem extends StatelessWidget {
                   colorFilter: const ColorFilter.mode(
                       Color(0xffFDFDFD), BlendMode.srcIn),
                 ),
-                Spacer(),
+                const Spacer(),
                 Row(
                   children: [
                     Icon(gridModel.icon, color: gridModel.color
@@ -126,7 +124,7 @@ class GridViewNotSelectedItem extends StatelessWidget {
                 colorFilter:
                     const ColorFilter.mode(Color(0xff7166F9), BlendMode.srcIn),
               ),
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   Icon(

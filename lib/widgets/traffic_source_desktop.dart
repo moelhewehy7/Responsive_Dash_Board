@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/widgets/circular_percentage_indicator.dart';
 import 'package:responsive_dash_board/widgets/custom_container.dart';
-import 'package:responsive_dash_board/widgets/traffic_sources_ListTile.dart';
+import 'package:responsive_dash_board/widgets/traffic_sources_list_tile.dart';
 import '../utils/app_styles.dart';
 
 class TrafficSourceDesktop extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:responsive_dash_board/models/grid_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
-import 'package:responsive_dash_board/widgets/grid_Item.dart';
+import 'package:responsive_dash_board/widgets/gridview_item.dart';
 
 class CustomGridView extends StatefulWidget {
   const CustomGridView({

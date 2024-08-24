@@ -92,6 +92,7 @@ class DashboardMobileHeader extends StatelessWidget {
             ),
             Flexible(
                 child: ConstrainedBox(
+              // ignore: prefer_const_constructors
               constraints: BoxConstraints(maxWidth: 30, minWidth: 15),
               child: AspectRatio(
                   aspectRatio: 1,
