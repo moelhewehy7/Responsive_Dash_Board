@@ -111,7 +111,7 @@ double getResponsiveText(context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
   double rsponsiveText = fontSize * scaleFactor;
   double maxFontSize = fontSize * 1.3;
-  double minFontSize = fontSize * 0.8;
+  double minFontSize = fontSize * 0.9;
   return rsponsiveText.clamp(minFontSize, maxFontSize);
 }
 

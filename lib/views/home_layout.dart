@@ -13,7 +13,7 @@ class HomeLayout extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: width <= 855 ? AppBar() : null,
+      appBar: width < 855 ? AppBar() : null,
       drawer: const CustomDrawer(),
       body: AdaptiveLayout(
           mobileLayout: (context) => const MobileLayout(),

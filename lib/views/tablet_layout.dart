@@ -16,7 +16,7 @@ class TabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
-
+    debugPrint(width.toString());
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -45,7 +45,7 @@ class TabletLayout extends StatelessWidget {
                         const SizedBox(
                           height: 30,
                         ),
-                        width <= 925 && width > 855
+                        width <= 960 && width >= 855
                             ? const PorojectStatisticHeaderforMob()
                             : const ProjectStatisticHeaderForDesktop(),
                         const SizedBox(

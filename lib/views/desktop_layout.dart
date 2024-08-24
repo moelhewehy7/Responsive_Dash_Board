@@ -35,7 +35,7 @@ class DeskTopLayout extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 60,
+                        height: 40,
                       ),
                       ProjectStatisticHeaderForDesktop(),
                       SizedBox(

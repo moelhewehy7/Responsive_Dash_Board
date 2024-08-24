@@ -54,7 +54,7 @@ class _CustomGridViewState extends State<CustomGridView> {
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           mainAxisSpacing: 26, crossAxisSpacing: 25,
           crossAxisCount: 2, // Two items per row
-          childAspectRatio: 1.2, // Adjust as necessary for item aspect ratio
+          childAspectRatio: 1.15, // Adjust as necessary for item aspect ratio
         ),
         itemCount: 4, // Total number of items
         itemBuilder: (BuildContext context, int index) {

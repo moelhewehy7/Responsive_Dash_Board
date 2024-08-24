@@ -51,13 +51,13 @@ class MobileLayout extends StatelessWidget {
                     height: 20,
                   ),
                   Expanded(child: CustomGridView()),
-                  width <= 442
+                  width <= 450
                       ? TrafficSourceForSmallerDesktop()
                       : TrafficSourceDesktop(),
                   SizedBox(
                     height: 20,
                   ),
-                  width <= 442
+                  width <= 450
                       ? TrafficSourceForSmallerDesktop()
                       : TrafficSourceDesktop(),
                   SizedBox(

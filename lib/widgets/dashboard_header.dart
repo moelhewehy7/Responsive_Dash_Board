@@ -11,7 +11,7 @@ class DashboardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (width <= 470) {
+    if (width <= 480) {
       return const DashboardMobileHeader();
     } else {
       return const DashboardDesktopHeader();
@@ -73,20 +73,6 @@ class DashboardMobileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTileHeader(
-            leading: SizedBox(
-              height: 50,
-              width: 50,
-              child: Center(
-                child: Image.asset(
-                  Assets.imagesZahra,
-                ),
-              ),
-            ),
-            title: 'Zahra hasht..'),
-        const SizedBox(
-          height: 10,
-        ),
         Row(
           children: [
             ListTileHeader(
@@ -104,9 +90,29 @@ class DashboardMobileHeader extends StatelessWidget {
             const SizedBox(
               width: 25,
             ),
-            SvgPicture.asset(Assets.imagesBoroteamadd),
+            Flexible(
+                child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: 30, minWidth: 15),
+              child: AspectRatio(
+                  aspectRatio: 1,
+                  child: SvgPicture.asset(Assets.imagesBoroteamadd)),
+            )),
           ],
         ),
+        const SizedBox(
+          height: 10,
+        ),
+        ListTileHeader(
+            leading: SizedBox(
+              height: 50,
+              width: 50,
+              child: Center(
+                child: Image.asset(
+                  Assets.imagesZahra,
+                ),
+              ),
+            ),
+            title: 'Zahra hasht..'),
       ],
     );
   }
