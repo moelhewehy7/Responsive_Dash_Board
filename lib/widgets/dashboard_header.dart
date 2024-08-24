@@ -11,7 +11,7 @@ class DashboardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (width <= 480) {
+    if (width <= 521) {
       return const DashboardMobileHeader();
     } else {
       return const DashboardDesktopHeader();

@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:responsive_dash_board/widgets/custom_GridView.dart';
+import 'package:responsive_dash_board/widgets/custom_gridview_builder.dart';
 
 import 'package:responsive_dash_board/widgets/dashboard_header.dart';
 import 'package:responsive_dash_board/widgets/project_header.dart';
@@ -22,7 +22,7 @@ class MobileLayout extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 32),
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -51,13 +51,13 @@ class MobileLayout extends StatelessWidget {
                     height: 20,
                   ),
                   Expanded(child: CustomGridView()),
-                  width <= 450
+                  width <= 490
                       ? TrafficSourceForSmallerDesktop()
                       : TrafficSourceDesktop(),
                   SizedBox(
                     height: 20,
                   ),
-                  width <= 450
+                  width <= 490
                       ? TrafficSourceForSmallerDesktop()
                       : TrafficSourceDesktop(),
                   SizedBox(
