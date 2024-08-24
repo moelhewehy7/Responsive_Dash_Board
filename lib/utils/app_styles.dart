@@ -47,7 +47,7 @@ abstract class AppStyles {
 
   static TextStyle styleMedium32(context) {
     return TextStyle(
-      color: Color(0xFF2B2F42),
+      color: const Color(0xFF2B2F42),
       fontSize: getResponsiveText(context, fontSize: 32),
       fontWeight: FontWeight.w500,
     );
@@ -55,7 +55,7 @@ abstract class AppStyles {
 
   static TextStyle styleMedium26(context) {
     return TextStyle(
-      color: Color(0xFF2B2F42),
+      color: const Color(0xFF2B2F42),
       fontSize: getResponsiveText(context, fontSize: 26),
       fontWeight: FontWeight.w500,
     );
@@ -89,7 +89,7 @@ abstract class AppStyles {
 
   static TextStyle styleBold14(context) {
     return TextStyle(
-      color: Color(0xFF2B2F42),
+      color: const Color(0xFF2B2F42),
       fontSize: getResponsiveText(context, fontSize: 14),
       fontFamily: 'Neuton',
       fontWeight: FontWeight.w700,
@@ -99,7 +99,7 @@ abstract class AppStyles {
 
   static TextStyle styleRegular36(context) {
     return TextStyle(
-      color: Color(0xFF575353),
+      color: const Color(0xFF575353),
       fontSize: getResponsiveText(context, fontSize: 36),
       fontFamily: 'Alatsi',
       fontWeight: FontWeight.w400,

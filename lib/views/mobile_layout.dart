@@ -27,7 +27,7 @@ class MobileLayout extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: Column(
-              children: [
+              children: const [
                 DashboardHeader(),
               ],
             ),

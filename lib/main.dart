@@ -6,7 +6,7 @@ import 'package:responsive_dash_board/views/home_layout.dart';
 void main() => runApp(
       DevicePreview(
         enabled: false,
-        builder: (context) => ResponsiveDashBoard(), // Wrap your app
+        builder: (context) => const ResponsiveDashBoard(), // Wrap your app
       ),
     );
 
